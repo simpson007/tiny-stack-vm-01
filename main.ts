@@ -1,5 +1,5 @@
 import {readFileSync, mkdirSync, writeFileSync} from 'node:fs';
-const I = process.argv[2] || '/input', O = process.argv[3] || '/output';
+const I = process.env.MAKEFUN_INPUT_DIR || process.argv[2] || '/input', O = process.env.MAKEFUN_OUTPUT_DIR || process.argv[3] || '/output';
 const id = n => 'i' + String(n + 1).padStart(3, '0');
 function run(p, inp) {
   let pc = 0, steps = 0, sp = 0, cp = 0, ip = 0;
